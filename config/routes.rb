@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   get 'titles/:id/edit' => 'titles#edit', as: 'edit_title', id: /\d+/
   patch 'titles/:id' => 'titles#update'
 
+  #DELETE Routes
+  delete 'titles/:id' => 'titles#destroy'
+
   root to: 'titles#index'
 end

@@ -40,6 +40,14 @@ class TitlesController < ApplicationController
     end
   end
   # No view associated with this action we either redirector render.
+
+  def destroy
+    @title = find_title
+    @title.destroy
+
+    redirect_to titles_url # Redirects to the titles index page.
+  end
+
   private
 
   def find_title

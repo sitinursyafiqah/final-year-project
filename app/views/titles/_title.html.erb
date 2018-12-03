@@ -8,5 +8,7 @@ The name of the variable we use within the partial should match the partial name
   <div class='title'>
     <p>
       <strong>Name:</strong> <%= link_to title.name, title_path(title) %>
+      - <%= link_to 'edit', edit_title_path(title) %>
+      - <%= link_to 'delete', title_path(title), method: :delete, data: { confirm: 'Are you sure you want to delete this title?'} %>
     </p>
   </div>
