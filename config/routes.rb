@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   get 'titles/new' => 'titles#new', as: 'new_title'
   post 'titles' => 'titles#create'
 
+  #UPDATE Routes
+  get 'titles/:id/edit' => 'titles#edit', as: 'edit_title', id: /\d+/
+  patch 'titles/:id' => 'titles#update'
+
   root to: 'titles#index'
 end

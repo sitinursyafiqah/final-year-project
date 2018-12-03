@@ -5,7 +5,7 @@ class TitlesController < ApplicationController
   # Automatically load the app/views/titles/index.html.erb
 
   def show
-    @title = Title.find(params[:id]) # Load title mentioned by id in the route.
+    @title = find_title
   end
   # Automatically load the app/views/titles/show.html.erb
 
@@ -25,7 +25,26 @@ class TitlesController < ApplicationController
   end
   # This action does not have an associated view!
 
+  def edit
+    @title = find_title
+  end
+  # Automatically load the app/views/titles/edit.html.erb
+
+  def update
+    @title = find_title
+
+    if @title.update(title_params) # If the validation pass
+      redirect_to @title # Redirect to the show action for this title.
+    else # If the validation fail
+      render :edit # Render the edit view to show the form again and display validation errors.
+    end
+  end
+  # No view associated with this action we either redirector render.
   private
+
+  def find_title
+    Title.find(params[:id]) # Load title mentioned by id in the route.
+  end
 
   def title_params
     params.require(:title).permit(:name)
