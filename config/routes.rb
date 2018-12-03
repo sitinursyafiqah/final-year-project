@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get 'titles'     => 'titles#index' # Title Index (Show All Titles)
   get 'titles/:id' => 'titles#show', as: 'title', id: /\d+/ # Title Show (Show A Title)
 
+  #CREATE Routes
+  get 'titles/new' => 'titles#new', as: 'new_title'
+  post 'titles' => 'titles#create'
+
   root to: 'titles#index'
 end
