@@ -3,7 +3,7 @@
 <% @titles.each do |title| %>
   <div class='title'>
     <p>
-      <strong>Name:</strong> <%= title.name %>
+      <strong>Name:</strong> <%= link_to title.name, title_path(title) %>
     </p>
   </div>
 <% end %>
