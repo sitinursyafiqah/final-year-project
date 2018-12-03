@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   #SHOW Routes
   get 'titles'     => 'titles#index' # Title Index (Show All Titles)
   get 'titles/:id' => 'titles#show', as: 'title', id: /\d+/ # Title Show (Show A Title)
+
+  root to: 'titles#index'
 end
