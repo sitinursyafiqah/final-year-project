@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'titles/index'
-  get 'titles/show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # routes
+  # HTTP VERBS: get, post,, put, patch, delete
+
+  # verb 'url/path' => 'controller#action' 
+
+  #SHOW Routes
+  get 'titles'     => 'titles#index' # Title Index (Show All Titles)
+  get 'titles/:id' => 'titles#show', as: 'title', id: /\d+/ # Title Show (Show A Title)
 end
