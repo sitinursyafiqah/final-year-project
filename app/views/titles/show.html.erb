@@ -1,9 +1,5 @@
 <h2>Title Information</h2>
 
-<div class='title'>
-  <p>
-    <strong>Name:</strong> <%= @title.name %>
-  </p>
-</div>
+<%= render partial: 'title', object: @title %>
 
 <p><%= link_to 'Back to All Titles', titles_path %></p>
